@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
 </head>
+
 <body>
-    <h1>Hello World</h1>
-    <p>Test 2</p>
+    <div x-data="{
+        posts: {},
+        async getData() {
+            this.posts = await (await fetch('https://randomizer-service-mrtv0.cloud.okteto.net/percentage')).json();
+                        }
+                 }">
+        <button x-on:click="getData">Send get request</button>
+        Data returned: <strong x-text="posts.title">Placeholder</strong>
+        <img :src="posts.title"/>
+    </div>
 </body>
 </html>
