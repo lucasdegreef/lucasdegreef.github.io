@@ -7,7 +7,7 @@
     <div x-data="{
         posts: {},
         async getData() {
-            this.posts = await (await fetch('https://randomizer-service-mrtv0.cloud.okteto.net/percentage')).json();
+            this.posts = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/percentage')).json();
                         }
                  }">
         <button x-on:click="getData">Send get request</button>
