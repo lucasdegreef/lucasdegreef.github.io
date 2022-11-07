@@ -11,7 +11,7 @@
             this.posts = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/percentage')).json();
                         }
                  }">
-        <button x-on:click="getData">Send get request</button>
+        <button x-on:click="getData">verzend reaquest</button>
         Data returned: <strong x-text="posts.title">Placeholder</strong>
         <img :src="posts.title"/>
     </div>
