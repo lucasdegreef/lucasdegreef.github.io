@@ -6,7 +6,7 @@
 <body>
     <p>hello </p>
     <div x-data="{
-        posts: null,
+        posts: {},
         async getData() {
             this.posts = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/song/me')).json();
                         }
