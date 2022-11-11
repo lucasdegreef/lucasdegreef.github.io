@@ -8,7 +8,7 @@
     <div x-data="{
         posts: null,
         async getData() {
-            this.posts = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/percentage')).json();
+            this.posts = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/song/me')).json();
                         }
                  }">
         <button x-on:click="getData">verzend reaquest</button>
