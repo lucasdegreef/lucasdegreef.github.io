@@ -2,17 +2,37 @@
 <head>
     <script defer src="https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js"></script>
 </head>
-
 <body>
-    <p>hello </p>
     <div x-data="{
-        posts: {},
+			posts: {},
         async getData() {
             this.posts = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/color/keuze')).json();
-                        }
-                 }">
-        <button x-on:click="getData">verzend reaquest</button>
+                        },
+				 
+			quoteData: {},
+			posttitle: null,
+			async quotePost(){
+				this.quoteData = await(await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote',
+				{
+					method: 'POST',
+					body: JSON.stringify({onderwerp: this.posttitle}),
+					headers:{'Content-type': 'application/json; charset=UTF-8',}
+				
+				}
+				)).json();
+				
+							}
+				}
+	">
+       
+		  <button x-on:click="getData">verzend reaquest</button>
         Data returned: <strong x-text="posts.color">Placeholder</strong>
+		
+		<input type="text" x-model="posttitle">
+        <button x-on:click="quotePost">Call method</button>
+
+        <p>de qoute van een bekende: <strong x-text="quoteData.text"></strong></p>
+
     </div>
 </body>
 </html>
