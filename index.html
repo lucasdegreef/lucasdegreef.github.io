@@ -25,12 +25,25 @@
 				}
 	">
        
-		  <button x-on:click="getData">verzend reaquest</button>
-        Data returned: <strong x-text="posts.color">Placeholder</strong>
-		
-		<input type="text" x-model="posttitle">
-        <button x-on:click="quotePost">Call method</button>
-
+		<div>
+		<button x-on:click="getData">verzend reaquest</button>
+		Data returned: <strong x-text="posts.color">Placeholder</strong>	        
+		</div>
+		<div> 
+		<select x-model="posttitle">
+			<option>beauty</option>
+			<option>peace</option>
+			<option>attitude</option>
+			<option>morning</option>
+			<option>music</option>
+			<option>mom</option>
+			<option>nature</option>
+			<option>patience</option>
+			<option>marriage</option>
+			<option>best</option>
+		</select>
+		</div>
+		<button x-on:click="quotePost">Call method</button>
         <p>de qoute van een bekende: <strong x-text="quoteData.text"></strong></p>
 
     </div>
