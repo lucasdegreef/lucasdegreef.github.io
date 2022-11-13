@@ -6,28 +6,13 @@
 <body>
     <p>hello </p>
     <div x-data="{
-        eersteGet: {},
+        posts: {},
         async getData() {
-            this.eersteGet = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/color/keuze')).json();
+            this.posts = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/color/keuze')).json();
                         }
-                 },
-                 quoteData{},
-                 onderwerp : null,
-                 async externeApi(){this.quoteData = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote',
-                 {  method: 'POST',
-                    body: JSON.stringify({onderwerp : this.onderwerp,}),
-                    headers: {'Content-type': 'application/json; charset=UTF-8',},
-                 })).json();
-                                  }
                  }">
         <button x-on:click="getData">verzend reaquest</button>
-        Data returned: <strong x-text="eersteGet.color">Placeholder</strong>
-        
-        <input type="text" x-model="onderwerp">
-        <button x-on:click="externeApi">Call method</button>
-
-        <p>de qoute van een bekende: <strong x-text="quoteData.tag"></strong></p>
-        
+        Data returned: <strong x-text="posts.color">Placeholder</strong>
     </div>
 </body>
 </html>
