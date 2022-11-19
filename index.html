@@ -6,7 +6,7 @@
     <div x-data="{
 			thema: {},
         async getData() {
-            this.posts = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote/thema')).json();
+            this.thema = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote/thema')).json();
                         },
 				 
 			quoteData: {},
