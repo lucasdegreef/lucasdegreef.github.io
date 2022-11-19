@@ -5,22 +5,25 @@
 <body>
     <div x-data="{
 			thema: {},
+			onderwerp: '',
         async getData() {
-            this.thema = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote/thema')).json();
+            this.thema = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/qoute/'+this.onderwerp)).json();
                         },
-		 	starwarname:{},
+
+			starwarname:{},
 			cijfer: '',
-	async getstarwars(){
-	     this.starwarname = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/characterSTR/'+this.cijfer)).json;
+			async getstarwars(){
+				this.starwarname = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/characterSTR/'+ this.cijfer )).json;
 			},
-				 
-			quoteData: {},
-			posttitle: null,
-			async quotePost(){
-				this.quoteData = await(await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote',
+
+			lijstthemapersoon : {},
+			nieuwthema: null,
+			persoon : null,
+			async updatelijst(){
+				this.lijstthemapersoon = await(await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote',
 				{
 					method: 'POST',
-					body: JSON.stringify({onderwerp: this.posttitle}),
+					body: JSON.stringify({onderwerp: this.nieuwthema ,persoon : this.persoon}),
 					headers:{'Content-type': 'application/json; charset=UTF-8',}
 				
 				}
@@ -29,18 +32,8 @@
 							}
 				}
 	">
-       
-		<div>
-		<button x-on:click="getData">verzend reaquest</button>
-		Data returned: <strong x-text="thema.Thema">Placeholder</strong>	        
-		</div>
-	    	<div>
-		<input type="text" x-model="cijfer">
-		<button x-on:click="getstarwars">verzend reaquest</button>
-		Data returned: <strong x-text="starwarname.character">Placeholder</strong>
-		</div>
-		<div> 
-		<select x-model="posttitle">
+	<div>
+		<select x-model="onderwerp">
 			<option>beauty</option>
 			<option>peace</option>
 			<option>attitude</option>
@@ -51,11 +44,28 @@
 			<option>patience</option>
 			<option>marriage</option>
 			<option>best</option>
-		</select>
-		</div>
-		<button x-on:click="quotePost">Call method</button>
-        <p>de qoute van een bekende: <strong x-text="quoteData.text"></strong></p>
+		</select>    
+		<button x-on:click="getData">Call method</button>
+        <p>de qoute van een bekende: <strong x-text="thema.text"></strong></p>
+	</div>
 
+	<div>
+		<input type="text" x-model="cijfer">
+		<button x-on:click="getstarwars">verzend reaquest</button>
+		Data returned: <strong x-text="starwarname.character">Placeholder</strong>
+	</div>
+
+	
+	<div> 
+		<input type="text" x-model="nieuwthema">
+		<input type="text" x-model="persoon">
+		<button x-on:click="updatelijst">verzend reaquest</button>
+		Data returned: <strong x-text="lijstthemapersoon.onderwerp">Placeholder</strong>
+		Data returned: <strong x-text="lijstthemapersoon.persoon">Placeholder</strong>	
     </div>
+
 </body>
 </html>
+ 
+		
+		
