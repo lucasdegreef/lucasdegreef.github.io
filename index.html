@@ -4,9 +4,9 @@
 </head>
 <body>
     <div x-data="{
-			posts: {},
+			thema: {},
         async getData() {
-            this.posts = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/color/keuze')).json();
+            this.posts = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/thema')).json();
                         },
 				 
 			quoteData: {},
@@ -27,7 +27,7 @@
        
 		<div>
 		<button x-on:click="getData">verzend reaquest</button>
-		Data returned: <strong x-text="posts.color">Placeholder</strong>	        
+		Data returned: <strong x-text="thema.color">Placeholder</strong>	        
 		</div>
 		<div> 
 		<select x-model="posttitle">
