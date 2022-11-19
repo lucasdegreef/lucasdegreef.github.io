@@ -8,6 +8,11 @@
         async getData() {
             this.thema = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote/thema')).json();
                         },
+		 	starwarname:{},
+			cijfer: null,
+	async getstarwars(){
+	     this.starwarname = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/characterSTR/'+this.cijfer)).json;
+			},
 				 
 			quoteData: {},
 			posttitle: null,
@@ -28,6 +33,11 @@
 		<div>
 		<button x-on:click="getData">verzend reaquest</button>
 		Data returned: <strong x-text="thema.Thema">Placeholder</strong>	        
+		</div>
+	    	<div>
+		<input type="text" x-model="cijfer">
+		<button x-on:click="getstarwars">verzend reaquest</button>
+		Data returned: <strong x-text="starwarname.character">Placeholder</strong>
 		</div>
 		<div> 
 		<select x-model="posttitle">
