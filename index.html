@@ -9,7 +9,7 @@
             this.thema = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote/thema')).json();
                         },
 		 	starwarname:{},
-			cijfer: null,
+			cijfer: '',
 	async getstarwars(){
 	     this.starwarname = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/characterSTR/'+this.cijfer)).json;
 			},
