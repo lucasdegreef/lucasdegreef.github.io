@@ -27,7 +27,7 @@
 					headers:{'Content-type': 'application/json; charset=UTF-8',}
 				
 				}
-				)).json();
+				).then(res =>res.json()));
 				
 							}
 				}
@@ -61,7 +61,7 @@
 		<input type="text" x-model="nieuwthema">
 		<input type="text" x-model="persoon">
 		<button x-on:click="updatelijst">verzend reaquest</button>
-	<p>Data returned: <strong x-text="lijstthemapersoon.onderwerp">Placeholder</strong></p>	
+	<p>Data returned: <strong x-text="lijstthemapersoon.onderwerp[onderwerp.length - 1] ">Placeholder</strong></p>	
 	<p>Data returned: <strong x-text="lijstthemapersoon.persoon">Placeholder</strong></p>	
     </div>
 
