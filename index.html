@@ -7,7 +7,7 @@
 			thema: {},
 			onderwerp: '',
         async getData() {
-            this.thema = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/qoute/'+this.onderwerp)).json();
+            this.thema = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote/'+this.onderwerp)).json();
                         },
 
 			starwarname:{},
@@ -20,7 +20,7 @@
 			nieuwthema: null,
 			persoon : null,
 			async updatelijst(){
-				this.lijstthemapersoon = await(await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote',
+				this.lijstthemapersoon = await(await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/nieuwthema',
 				{
 					method: 'POST',
 					body: JSON.stringify({onderwerp: this.nieuwthema ,persoon : this.persoon}),
