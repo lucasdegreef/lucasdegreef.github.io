@@ -7,7 +7,7 @@
 			thema: {},
 			onderwerp: '',
         async getData() {
-            this.thema = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote/'+this.onderwerp)).json();
+            this.thema = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/qoute/'+this.onderwerp)).json();
                         },
 
 			starwarname:{},
@@ -20,7 +20,7 @@
 			nieuwthema: null,
 			persoon : null,
 			async updatelijst(){
-				this.lijstthemapersoon = await(await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/nieuwthema',
+				this.lijstthemapersoon = await(await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote',
 				{
 					method: 'POST',
 					body: JSON.stringify({onderwerp: this.nieuwthema ,persoon : this.persoon}),
@@ -52,7 +52,7 @@
 	<div>
 		<input type="text" x-model="cijfer">
 		<button x-on:click="getstarwars">verzend reaquest</button>
-		Data returned: <strong x-text="starwarname.character">Placeholder</strong>
+	<p>Data returned: <strong x-text="starwarname.character">Placeholder</strong></p>	
 	</div>
 
 	
@@ -60,12 +60,9 @@
 		<input type="text" x-model="nieuwthema">
 		<input type="text" x-model="persoon">
 		<button x-on:click="updatelijst">verzend reaquest</button>
-		Data returned: <strong x-text="lijstthemapersoon.onderwerp">Placeholder</strong>
-		Data returned: <strong x-text="lijstthemapersoon.persoon">Placeholder</strong>	
+	<p>Data returned: <strong x-text="lijstthemapersoon.onderwerp">Placeholder</strong></p>	
+	<p>Data returned: <strong x-text="lijstthemapersoon.persoon">Placeholder</strong>	</p>	
     </div>
 
 </body>
 </html>
- 
-		
-		
