@@ -10,10 +10,10 @@
             this.thema = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/quote/'+this.onderwerp)).json();
                         },
 
-			starwarname:{},
-			cijfer: '',
+			starswarname:{},
+			Cijfer:'',
 			async getstarwars(){
-				this.starwarname = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/characterSTR/'+ this.cijfer )).json;
+				this.starwarname = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/characterSTR/'+ this.Cijfer )).json;
 			},
 
 			lijstthemapersoon : {},
@@ -50,8 +50,8 @@
 	</div>
 
 	<div>
-		<p>Data returned: <strong x-text="starwarname.character">Placeholder</strong></p>
-		<input type="text" x-model="cijfer">
+		<p>Data returned: <strong x-text="starswarname.character">Placeholder</strong></p>
+		<input type="text" x-model="Cijfer">
 		<button x-on:click="getstarwars">verzend reaquest</button>	
 	</div>
 
