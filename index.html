@@ -13,7 +13,7 @@
 			starswarname:{},
 			Cijfer:'',
 			async getstarwars(){
-				this.starwarname = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/characterSTR/'+this.Cijfer)).json;
+				this.starswarname = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/characterSTR/'+this.Cijfer)).json;
 			},
 
 			lijstthemapersoon : {},
