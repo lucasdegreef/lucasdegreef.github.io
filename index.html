@@ -13,7 +13,7 @@
 			starswarname:{},
 			Cijfer:'',
 			async getstarwars(){
-				this.starswarname = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/characterSTR/'+this.Cijfer)).json;
+			this.starswarname = await (await fetch('https://api-lucas-lucasdegreef.cloud.okteto.net/characterSTR/' + this.Cijfer).then(res => res.json()));
 			},
 
 			lijstthemapersoon : {},
@@ -52,19 +52,7 @@
 
 	<div>
 		<p>Data returned: <strong x-text="starswarname.character">Placeholder</strong></p>
-		<select x-model="onderwerp">
-			<option value="" disabled>kies een onderwerp</option>
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-			<option>6</option>
-			<option>7</option>
-			<option>8</option>
-			<option>9</option>
-			<option>10</option>
-		</select> 
+		<input type="text" x-model="Cijfer">
 		<button x-on:click="getstarwars">verzend reaquest</button>	
 	</div>
 
