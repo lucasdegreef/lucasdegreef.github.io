@@ -34,9 +34,8 @@
 	">
 	<div>
 		<h2>Webpagina Lucas De Greef Basis project API</h2>
-		<p>Deze website is er voor gemaakt als u even niet goed voelt in u vel. Is deze website gemaakt dat het u opfleurd met een quote.
-		En welk starwars character beste bij u past. 
-		<br>In deze lijst kunt u de verschillende quotes krijgen van het gewenste thema dat u heeft aangeduid.</p>
+		<p>Het doel van deze website is om u op te fleuren met een quote, wanner u zich niet goed voelt.<br> In deze lijst kunt u zien aan de hand van het thema
+		dat u hebt aangeduid naar de verschillende quotes. Ook kunt u zien welk Star wars character het beste past bij u. </p>
 		<p>Kies u thema in deze lijst <strong x-text="thema.text"></strong></p>
 		<select x-model="onderwerp">
 			<option value="" disabled>kies een onderwerp</option>
@@ -45,7 +44,6 @@
 			<option>attitude</option>
 			<option>morning</option>
 			<option>music</option>
-			<option>mom</option>
 			<option>nature</option>
 			<option>patience</option>
 			<option>marriage</option>
@@ -55,7 +53,7 @@
 	</div>
 
 	<div>
-		<p>Kies u lievelings getal tussen 1 en 83. Deze keuze gaat bepalen welk starwars character beste bij u past.</p>
+		<p>Kies uw lievelings getal tussen 1 en 83. Deze keuze gaat bepalen welk starwars character beste bij u past.</p>
 		<p>Starwars character Dat bij u past: <strong x-text="starswarname.character">Placeholder</strong></p>
 		<input type="text" x-model="Cijfer">
 		<button x-on:click="getstarwars">Verzend get</button>	
@@ -63,7 +61,7 @@
 	
 	<div>
 		<p>Als u nog wat ideeën heeft over de onderwerpen van quotes kunt u het ingeven in het eerste tekst vak.</p>
-		<p>Gelieve u naam achter te laten in het 2de tekstvak. Als u onderaan u gegevens ziet dan is u idee verstuurd naar ons.</p> 
+		<p>Gelieve u naam achter te laten in het 2de tekstvak. Als u je onderaan je gegevens ziet, dan is u idee verstuur naar ons.</p> 
 		<input type="text" x-model="nieuwthema">
 		<input type="text" x-model="persoon">
 		<button x-on:click="updatelijst">verzend post</button>
