@@ -33,6 +33,7 @@
 				}
 	">
 	<div>
+		<p>de qoute van een bekende: <strong x-text="thema.text"></strong></p>
 		<select x-model="onderwerp">
 			<option>beauty</option>
 			<option>peace</option>
@@ -46,13 +47,12 @@
 			<option>best</option>
 		</select>    
 		<button x-on:click="getData">Call method</button>
-        <p>de qoute van een bekende: <strong x-text="thema.text"></strong></p>
 	</div>
 
 	<div>
+		<p>Data returned: <strong x-text="starwarname.character">Placeholder</strong></p>
 		<input type="text" x-model="cijfer">
-		<button x-on:click="getstarwars">verzend reaquest</button>
-	<p>Data returned: <strong x-text="starwarname.character">Placeholder</strong></p>	
+		<button x-on:click="getstarwars">verzend reaquest</button>	
 	</div>
 
 	
@@ -61,7 +61,7 @@
 		<input type="text" x-model="persoon">
 		<button x-on:click="updatelijst">verzend reaquest</button>
 	<p>Data returned: <strong x-text="lijstthemapersoon.onderwerp">Placeholder</strong></p>	
-	<p>Data returned: <strong x-text="lijstthemapersoon.persoon">Placeholder</strong>	</p>	
+	<p>Data returned: <strong x-text="lijstthemapersoon.persoon">Placeholder</strong></p>	
     </div>
 
 </body>
